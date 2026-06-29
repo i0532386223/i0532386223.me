@@ -7,7 +7,17 @@ $(function() {
         submitSuccess: function($form, event) {
             $("#contactForm button[type=\"submit\"]").attr("disabled", true);
             event.preventDefault();
-            
+
+            if (!$form.find("input[name=\"cf-turnstile-response\"]").val()) {
+                $("#contactForm button[type=\"submit\"]").attr("disabled", false);
+                $('#success').html("<div class='alert alert-danger'>");
+                $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                    .append("</button>");
+                $('#success > .alert-danger').append("<strong>Please complete the verification and try again.</strong>");
+                $('#success > .alert-danger').append('</div>');
+                return;
+            }
+
             $.ajax({
                 url: $form.attr("action"),
                 type: "POST",
@@ -28,14 +38,21 @@ $(function() {
                         .append('</div>');
 
                     $('#contactForm').trigger("reset");
+                    if (window.turnstile) {
+                        turnstile.reset();
+                    }
                 },
                 error: function() {
+                    $("#contactForm button[type=\"submit\"]").attr("disabled", false);
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
                     $('#success > .alert-danger').append("<strong>Sorry, it seems that my mail server is not responding. Please try again later!");
                     $('#success > .alert-danger').append('</div>');
                     $('#contactForm').trigger("reset");
+                    if (window.turnstile) {
+                        turnstile.reset();
+                    }
                 },
             })
         },
