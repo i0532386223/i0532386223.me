@@ -1,0 +1,51 @@
+body {
+    background-image: url("6a038dda-709e-4567-ac7e-59b28a03ed7d-low.png");
+    background-color: #cccccc;
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+}
+
+
+.margin-top {
+    margin-top: 0px;
+}
+
+.preview {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.cardh {
+    height: 385px;
+}
+
+.h1-left {
+    margin-left: 0;
+}
+
+.shine {
+    background-color: white;
+    box-shadow: 0px 0px 21px 18px rgba(255, 255, 255, 1);
+}
+
+.card-effects {
+    background-color: #ffffffe8;
+    border-radius: 2rem;
+}
+
+.h-9 {
+    margin-left: 12px;
+}
+
+.text-link {
+    color: #495057;
+}
+
+
+.btn-outline-secondary:hover {
+    background-color: #e4e4e4;
+}
