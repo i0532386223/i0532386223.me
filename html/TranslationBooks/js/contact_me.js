@@ -8,15 +8,13 @@ $(function() {
             $("#contactForm button[type=\"submit\"]").attr("disabled", true);
             event.preventDefault();
             
-            var email = $("input#email").val();
-            var message = $("textarea#message").val();
             $.ajax({
-                url: "/api/contact",
+                url: $form.attr("action"),
                 type: "POST",
-                data: {
-                    email: email,
-                    message: message,
-                    source: "TranslationBooks"
+                data: $form.serialize() + "&source=TranslationBooks",
+                dataType: "json",
+                headers: {
+                    "Accept": "application/json"
                 },
                 cache: false,
                 success: function() {
