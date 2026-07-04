@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Visual App Launcher shows Mac applications as a visual grid of icons for fast launching without typing a query.">
+    <meta name="author" content="Ivan Kramarchuk">
+
+    <title>Visual App Launcher - Visual launcher for macOS apps</title>
+
+    <link href="../TranslationBooks/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../TranslationBooks/css/freelancer.css" rel="stylesheet">
+    <link href="../TranslationBooks/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../TranslationBooks/css/vendor/google-fonts.css" rel="stylesheet" type="text/css">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+    <!--[if lt IE 9]>
+        <script src="../TranslationBooks/js/vendor/html5shiv.js"></script>
+        <script src="../TranslationBooks/js/vendor/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#page-top" key="logo">Visual App Launcher</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#portfolio" key="photos">Portfolio</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about" key="about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact" key="contact">Contact</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#privacy" key="privacy">Privacy Policy</a>
+                    </li>
+                    <li class="page-scroll lang-margin">
+                        <a href="#en" id="en" class="lang">EN</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#ru" id="ru" class="lang">RU</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-icon" src="img/Icon-512.png" alt="Visual App Launcher app icon">
+                    <div class="intro-text">
+                        <span class="name" key="logo">Visual App Launcher</span>
+                        <hr class="star-light">
+                        <span class="skills" key="short_discription"></span>
+                    </div>
+
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                        <span class="btn btn-lg btn-outline" key="availability">Mac App Store version is being prepared</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 key="photos">Screenshots</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 portfolio-item">
+                    <img src="img/screenshots/01-ilaunchpad-1280x800.png" class="img-responsive" alt="Visual App Launcher icon grid and search">
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <img src="img/screenshots/02-ilaunchpad-1280x800.png" class="img-responsive" alt="Visual App Launcher context menu">
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <img src="img/screenshots/03-ilaunchpad-1280x800.png" class="img-responsive" alt="Visual App Launcher settings">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 key="about">About</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <p key="about-text1">Visual App Launcher shows your Mac apps as a visual grid of icons, so you can launch what you need by recognition instead of typing a query.</p>
+                    <p key="about-text2">Open it with Option-Space or F4, use search when you need it, and switch between Recent, Favorite, Most Used, Newest, and All.</p>
+                    <p key="about-text3">Add custom application folders, adjust columns and icon size, and hide apps that you do not want to show in the launcher. Hidden apps are protected before they can be restored.</p>
+                    <p key="about-text4">The app runs locally on your Mac and does not display ads.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 key="contact_me">Contact Me</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <form name="sentMessage" id="contactForm" method="POST" action="https://formspree.io/f/xpqglwyl" novalidate>
+                        <input type="text" name="website" tabindex="-1" autocomplete="off" style="display: none;">
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Email Address</label>
+                                <input type="email" class="form-control" placeholder="Email Address" id="email" name="email" required data-validation-required-message="Please enter your email address.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Message</label>
+                                <textarea rows="5" class="form-control" placeholder="Message" id="message" name="message" required data-validation-required-message="Please enter a message."></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12">
+                                <div class="cf-turnstile" data-sitekey="0x4AAAAAADsm5y_Mrsrrty1F"></div>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="success"></div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <button type="submit" class="btn btn-success btn-lg btn-block">Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Section -->
+    <section id="privacy">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 key="privacy">Privacy Policy</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a href="privacy_policy.html" key="privacy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; <span key="logo"></span> 2026
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <script src="../TranslationBooks/js/jquery.js"></script>
+    <script src="../TranslationBooks/js/bootstrap.min.js"></script>
+    <script src="../TranslationBooks/js/vendor/jquery.easing.min.js"></script>
+    <script src="../TranslationBooks/js/classie.js"></script>
+    <script src="../TranslationBooks/js/cbpAnimatedHeader.js"></script>
+    <script src="../TranslationBooks/js/jqBootstrapValidation.js"></script>
+    <script>
+    $(function() {
+        $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
+            preventSubmit: true,
+            submitError: function($form, event, errors) {
+            },
+            submitSuccess: function($form, event) {
+                $('#contactForm button[type="submit"]').attr("disabled", true);
+                event.preventDefault();
+
+                if (!$form.find('input[name="cf-turnstile-response"]').val()) {
+                    $('#contactForm button[type="submit"]').attr("disabled", false);
+                    $('#success').html("<div class='alert alert-danger'>");
+                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                        .append("</button>");
+                    $('#success > .alert-danger').append("<strong>Please complete the verification and try again.</strong>");
+                    $('#success > .alert-danger').append('</div>');
+                    return;
+                }
+
+                $.ajax({
+                    url: $form.attr("action"),
+                    type: "POST",
+                    data: $form.serialize() + "&source=VisualAppLauncher",
+                    dataType: "json",
+                    headers: {
+                        "Accept": "application/json"
+                    },
+                    cache: false,
+                    success: function() {
+                        $('#contactForm button[type="submit"]').attr("disabled", false);
+                        $('#success').html("<div class='alert alert-success'>");
+                        $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                            .append("</button>");
+                        $('#success > .alert-success')
+                            .append("<strong>Your message has been sent. </strong>");
+                        $('#success > .alert-success')
+                            .append('</div>');
+
+                        $('#contactForm').trigger("reset");
+                        if (window.turnstile) {
+                            turnstile.reset();
+                        }
+                    },
+                    error: function() {
+                        $('#contactForm button[type="submit"]').attr("disabled", false);
+                        $('#success').html("<div class='alert alert-danger'>");
+                        $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                            .append("</button>");
+                        $('#success > .alert-danger').append("<strong>Sorry, it seems that my mail server is not responding. Please try again later!");
+                        $('#success > .alert-danger').append('</div>');
+                        $('#contactForm').trigger("reset");
+                        if (window.turnstile) {
+                            turnstile.reset();
+                        }
+                    },
+                })
+            },
+            filter: function() {
+                return $(this).is(":visible");
+            },
+        });
+
+        $('a[data-toggle="tab"]').click(function(e) {
+            e.preventDefault();
+            $(this).tab("show");
+        });
+    });
+
+    $('#contactForm input,#contactForm textarea').focus(function() {
+        $('#success').html('');
+    });
+    </script>
+
+    <script src="../TranslationBooks/js/freelancer.js"></script>
+
+    <script>
+    var aLangKeys=new Array();
+    aLangKeys['en']=new Array();
+    aLangKeys['ru']=new Array();
+    aLangKeys['en']['logo']='Visual App Launcher';
+    aLangKeys['ru']['logo']='Visual App Launcher';
+
+    aLangKeys['en']['short_discription']='A visual launcher for Mac apps';
+    aLangKeys['ru']['short_discription']='Визуальный лаунчер приложений для Mac';
+
+    aLangKeys['en']['availability']='Mac App Store version is being prepared';
+    aLangKeys['ru']['availability']='Версия для Mac App Store готовится к публикации';
+
+    aLangKeys['en']['photos']='Screenshots';
+    aLangKeys['ru']['photos']='Скриншоты';
+
+    aLangKeys['en']['about']='About';
+    aLangKeys['ru']['about']='О приложении';
+
+    aLangKeys['en']['about-text1']='Visual App Launcher shows your Mac apps as a visual grid of icons, so you can launch what you need by recognition instead of typing a query.';
+    aLangKeys['ru']['about-text1']='Visual App Launcher показывает приложения Mac в виде наглядной сетки иконок, чтобы запускать их визуально, без обязательного поиска по названию.';
+
+    aLangKeys['en']['about-text2']='Open it with Option-Space or F4, use search when you need it, and switch between Recent, Favorite, Most Used, Newest, and All.';
+    aLangKeys['ru']['about-text2']='Открывайте окно через Option-Space или F4, используйте поиск при необходимости и переключайтесь между Recent, Favorite, Most Used, Newest и All.';
+
+    aLangKeys['en']['about-text3']='Add custom application folders, adjust columns and icon size, and hide apps that you do not want to show in the launcher. Hidden apps are protected before they can be restored.';
+    aLangKeys['ru']['about-text3']='Добавляйте свои папки с приложениями, настраивайте количество колонок и размер иконок, скрывайте приложения, которые не должны отображаться в лаунчере. Для восстановления скрытых приложений требуется подтверждение доступа.';
+
+    aLangKeys['en']['about-text4']='The app runs locally on your Mac and does not display ads.';
+    aLangKeys['ru']['about-text4']='Приложение работает локально на Mac и не показывает рекламу.';
+
+    aLangKeys['en']['contact']='Contact';
+    aLangKeys['ru']['contact']='Контакты';
+
+    aLangKeys['en']['privacy']='Privacy Policy';
+    aLangKeys['ru']['privacy']='Политика конфиденциальности';
+
+    aLangKeys['en']['contact_me']='Contact me';
+    aLangKeys['ru']['contact_me']='Связаться с нами';
+
+    $(document).ready(function() {
+        $('.lang').click( function(e) {
+            e.preventDefault();
+            var lang = $(this).attr('id');
+            $('[key]').each(function(i){
+                $(this).text(aLangKeys[lang][ $(this).attr('key') ]);
+            });
+        } );
+        $('#en').trigger( "click");
+    });
+    </script>
+
+</body>
+
+</html>
