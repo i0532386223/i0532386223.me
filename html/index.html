@@ -1,73 +1,144 @@
 <!doctype html>
-<html lang="en" class="h-100">
+<html class="home-page" lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Ivan Kramarchuk — software engineer building useful tools for the near future.">
     <meta name="author" content="Ivan Kramarchuk">
-    <title>i0532386223.me</title>
+    <meta name="theme-color" content="#030b17">
+    <title>Ivan Kramarchuk — Software Engineer</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/main.css">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-
+    <script type="module" src="/orbital.js"></script>
 </head>
 
-<body class="d-flex flex-column h-100">
+<body class="orbital-page">
+    <canvas class="space-canvas" id="space-canvas" aria-hidden="true"></canvas>
+    <div class="space-vignette" aria-hidden="true"></div>
 
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-        <!-- <a class="" href="/"><h5 class="my-0 mr-md-auto font-weight-normal">Ivan Kramarchuk</h5></a> -->
-        <a class="my-0 mr-md-auto font-weight-normal text-dark text-decoration-none" href="/"><span class="h3">Ivan
-                Kramarchuk</span></a>
-        <nav class="my-2 my-md-0 mr-md-3">
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link active" href="/apps.html">Apps</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/i0532386223" target="_blank">GitHub</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://www.linkedin.com/in/ivankramarchuk/" target="_blank">Linkedin</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/Principal_Software_Engineer_Ivan_Kramarchuk_CV.pdf">CV</a>
-                </li>
-                <li class="nav-item disabled">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Diary</a>
-                </li>
-            </ul>
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Primary navigation">
+            <a href="/apps.html">Apps</a>
+            <a href="https://github.com/i0532386223" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/ivankramarchuk/" target="_blank"
+                rel="noopener noreferrer">LinkedIn</a>
+            <a href="/Principal_Software_Engineer_Ivan_Kramarchuk_CV.pdf">CV</a>
         </nav>
-    </div>
+    </header>
 
-    <main role="main">
+    <main>
+        <section class="orbital-hero" id="home" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="hero-eyebrow entrance-item">Software Engineer</p>
+                <h1 class="entrance-item" id="hero-title">Ivan Kramarchuk</h1>
+                <p class="hero-tagline entrance-item">Building useful tools.</p>
+                <p class="hero-interests-label entrance-item">Personal interests</p>
+                <p class="hero-interests entrance-item">Computer Science <span aria-hidden="true">·</span> Space <span
+                        aria-hidden="true">·</span> Robots <span aria-hidden="true">·</span> Science</p>
+            </div>
 
-        <h3 class="m-4"><span class="shine h-9">Software Developer</span></h3>
+            <div class="orbital-system" id="orbital-system" aria-hidden="true">
+                <div class="sun"></div>
 
+                <div class="planet-stage" id="planet-stage">
+                    <div class="earth">
+                        <div class="earth-vanta" id="earth-vanta"></div>
+                        <div class="earth-fallback"></div>
+                        <div class="earth-interaction-zone" id="earth-interaction-zone"></div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="scroll-cue entrance-item" href="#specialization">
+                <span class="scroll-line" aria-hidden="true"></span>
+                <span>Scroll to continue</span>
+            </a>
+
+        </section>
+
+        <section class="specialization" id="specialization" aria-labelledby="specialization-title">
+            <div class="specialization-copy">
+                <p class="section-eyebrow">Specialization</p>
+                <h2 id="specialization-title">Principal Software Engineer</h2>
+                <p class="specialization-summary">High-performance endpoint DLP systems that observe data movement,
+                    classify sensitive information, and enforce security policies.</p>
+            </div>
+
+            <div class="technology-sphere-stage" id="technology-sphere-stage">
+                <div class="technology-sphere-shell">
+                    <div class="technology-sphere-grid" aria-hidden="true"></div>
+                    <canvas class="technology-sphere-canvas" id="technology-sphere-canvas" aria-hidden="true"></canvas>
+                    <ul class="technology-sphere" id="technology-sphere" aria-label="Specialized technologies">
+                        <li data-weight="2">Data Classification</li>
+                        <li data-weight="2">Policy Enforcement</li>
+                        <li data-weight="4">macOS</li>
+                        <li data-weight="4">DLP</li>
+                        <li data-weight="3">Endpoint Security</li>
+                        <li data-weight="3">System Extensions</li>
+                        <li data-weight="2">C++</li>
+                        <li data-weight="2">Swift</li>
+                        <li data-weight="1">Objective-C</li>
+                        <li data-weight="1">XPC</li>
+                        <li data-weight="1">Unified Logging</li>
+                        <li data-weight="1">Secure IPC</li>
+                        <li data-weight="1">Network Extensions</li>
+                        <li data-weight="1">Instruments</li>
+                        <li data-weight="1">macOS Internals</li>
+                        <li data-weight="1">Notarization</li>
+                        <li data-weight="2">App Sandbox</li>
+                        <li data-weight="1">Keychain</li>
+                        <li data-weight="2">Code Signing</li>
+                        <li data-weight="1">MDM</li>
+                        <li data-weight="1">Entitlements</li>
+                        <li data-weight="2">Privileged Helpers</li>
+                        <li data-weight="2">Reverse Engineering</li>
+                        <li data-weight="1">Crash Diagnostics</li>
+                        <li data-weight="1">XCTest</li>
+                        <li data-weight="2">SwiftUI</li>
+                        <li data-weight="1">Core Data</li>
+                        <li data-weight="1">WebKit</li>
+                        <li data-weight="1">Finder Extensions</li>
+                        <li data-weight="1">CMake</li>
+                        <li data-weight="1">CI Pipelines</li>
+                        <li data-weight="1">GCD</li>
+                        <li data-weight="1">OperationQueue</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="specialization-location">Vancouver, Canada</p>
+        </section>
+
+        <section class="selected-apps" id="selected-apps" aria-labelledby="selected-apps-title">
+            <div class="apps-heading">
+                <p class="section-eyebrow">Selected applications</p>
+                <h2 id="selected-apps-title">Apps</h2>
+            </div>
+
+            <div class="apps-orbit-list">
+                <a class="app-orbit" href="/VisualAppLauncher/">
+                    <span class="app-number">01</span>
+                    <span class="app-name">Visual App Launcher</span>
+                    <span class="app-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="app-orbit" href="/TranslationBooks/">
+                    <span class="app-number">02</span>
+                    <span class="app-name">TranslationBooks</span>
+                    <span class="app-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="app-orbit" href="/SimpleServersMonitor/">
+                    <span class="app-number">03</span>
+                    <span class="app-name">Simple Servers Monitor</span>
+                    <span class="app-arrow" aria-hidden="true">↗</span>
+                </a>
+            </div>
+
+            <a class="all-apps-link" href="/apps.html">View all applications</a>
+        </section>
     </main>
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-
-    <script>
-        const bgImg = new Image();
-        bgImg.src = '6a038dda-709e-4567-ac7e-59b28a03ed7d.png';
-        bgImg.onload = function () {
-            document.body.style.backgroundImage = 'url(' + bgImg.src + ')';
-        };
-    </script>
 </body>
 
 </html>
