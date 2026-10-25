@@ -20,14 +20,19 @@ openButton.addEventListener("click", () => {
       status.textContent = "Spam protection is unavailable. Reload the page and try again.";
       return;
     }
-    window.turnstile.ready(() => {
+    // The script onload event confirms that the explicit API is ready.
+    // Do not call turnstile.ready() with an asynchronously loaded script.
+    try {
       widgetId = window.turnstile.render("#spam-check", {
         sitekey: "0x4AAAAAADsm5y_Mrsrrty1F",
         callback: () => { sendButton.disabled = sending; status.textContent = "Ready to send."; },
         "expired-callback": () => { sendButton.disabled = true; status.textContent = "Please complete the spam check again."; },
         "error-callback": () => { sendButton.disabled = true; status.textContent = "The spam check failed. Reload the page or try another connection."; }
       });
-    });
+    } catch (error) {
+      sendButton.disabled = true;
+      status.textContent = "Spam protection could not start. Reload this page in Safari or another browser and try again.";
+    }
   };
   script.onerror = () => { status.textContent = "Spam protection could not load. Check your connection and reload the page."; };
   document.head.appendChild(script);
