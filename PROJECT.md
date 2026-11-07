@@ -22,13 +22,15 @@ Every contact form has a notice with policy links above its Open contact form bu
 
 The site has no general cookie banner or policy acceptance checkbox. The animation control stores only its on/off choice in local storage. The privacy policy describes provider security cookies and signals without promising that every provider configuration is cookie-free.
 
+The public email links in `privacy.html` use Cloudflare's `email_off` comments. This keeps those links readable without the CDN's injected email decoder, which the policy page's `script-src 'none'` correctly blocks. Do not relax that CSP to make an obfuscated address work.
+
 The policy uses retention criteria rather than an unverified fixed deletion period. Copies in email, provider archives, and backups require account-level management. Provider contracts, transfer safeguards, and retention settings must be kept consistent with the published policy; the repository does not verify those account settings. Delayed loading of Turnstile is an explicit user interaction boundary, not a claim that valid consent has been collected or that every configuration is exempt from consent.
 
 ## Assets and hosting
 
 Cloudflare Pages serves `html/`. The `_headers` file defines CSP, frame protection, HSTS, referrer policy, and browser permission limits. Contact sections allow only the existing external services. Keep their CSP separate from the portfolio CSP: matching Cloudflare header rules are combined.
 
-Keep the default Cloudflare cache policy for assets in the retained application sections. A section-wide `Cache-Control: max-age=0` would also apply to its fonts, images, and stylesheets.
+Keep the default Cloudflare cache policy for assets in the retained application sections. A section-wide `Cache-Control: max-age=0` would also apply to its fonts, images, and stylesheets. HTML responses use `no-transform`: the first production check found that Cloudflare otherwise injected Web Analytics and rewrote public email links. The strict CSP blocked those scripts but left the email address unreadable on the policy page. The HTML route rules prevent those CDN body changes while preserving the asset cache rules and the CSP.
 
 The top level `404.html` supplies the missing-page response. Its links start at the site root so that they also work at unknown nested addresses. Its meta CSP protects that content when the requested path has no specific CSP header rule.
 

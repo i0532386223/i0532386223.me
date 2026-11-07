@@ -7,35 +7,35 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=()
 
 /
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-src 'none'; form-action 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'
 
 /index.html
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-src 'none'; form-action 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'
 
 /apps
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-src 'none'; form-action 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'
 
 /apps.html
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-src 'none'; form-action 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'
 
 /404.html
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
   Content-Security-Policy: default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self' data:; connect-src 'none'; frame-src 'none'; form-action 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'
 
 /privacy
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
   Content-Security-Policy: default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self' data:; connect-src 'none'; frame-src 'none'; form-action 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'
 
 /privacy.html
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
   Content-Security-Policy: default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self' data:; connect-src 'none'; frame-src 'none'; form-action 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'
 
 /projects/*
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-src 'none'; form-action 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'
 
 # These sections contain contact forms. Do not put another CSP on /*:
@@ -51,3 +51,41 @@
 
 /VisualAppLauncher/*
   Content-Security-Policy: default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self'; img-src 'self' data:; connect-src 'self' https://formspree.io https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; form-action https://formspree.io; object-src 'none'; base-uri 'none'; frame-ancestors 'none'
+
+# Keep CDN-injected analytics and email rewriting out of HTML responses.
+# These paths cover rendered legacy pages, not their images, fonts, or CSS.
+/MedicineNotes/
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+
+/MedicineNotes/privacy_policy*
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+
+/MedicineNotes/help*
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+
+/MedicineNotes/terms*
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+
+/MedicineNotes/medical-information*
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+
+/MedicineNotes/consumer-health-data*
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+
+/TranslationBooks/
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+
+/TranslationBooks/privacy_policy*
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+
+/SimpleServersMonitor/
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+
+/SimpleServersMonitor/privacy_policy*
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+
+/VisualAppLauncher/
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+
+/VisualAppLauncher/privacy_policy*
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
