@@ -1,41 +1,47 @@
 @font-face {
+  font-display: swap;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
-  src: url('../../fonts/google/montserrat-400.ttf') format('truetype');
+  src: url('../../fonts/google/montserrat-400.woff2') format('woff2');
 }
 
 @font-face {
+  font-display: swap;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
-  src: url('../../fonts/google/montserrat-700.ttf') format('truetype');
+  src: url('../../fonts/google/montserrat-700.woff2') format('woff2');
 }
 
 @font-face {
+  font-display: swap;
   font-family: 'Lato';
   font-style: italic;
   font-weight: 400;
-  src: url('../../fonts/google/lato-400-italic.ttf') format('truetype');
+  src: url('../../fonts/google/lato-400-italic.woff2') format('woff2');
 }
 
 @font-face {
+  font-display: swap;
   font-family: 'Lato';
   font-style: italic;
   font-weight: 700;
-  src: url('../../fonts/google/lato-700-italic.ttf') format('truetype');
+  src: url('../../fonts/google/lato-700-italic.woff2') format('woff2');
 }
 
 @font-face {
+  font-display: swap;
   font-family: 'Lato';
   font-style: normal;
   font-weight: 400;
-  src: url('../../fonts/google/lato-400.ttf') format('truetype');
+  src: url('../../fonts/google/lato-400.woff2') format('woff2');
 }
 
 @font-face {
+  font-display: swap;
   font-family: 'Lato';
   font-style: normal;
   font-weight: 700;
-  src: url('../../fonts/google/lato-700.ttf') format('truetype');
+  src: url('../../fonts/google/lato-700.woff2') format('woff2');
 }

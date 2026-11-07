@@ -85,3 +85,9 @@ html[data-motion='off'] .app-row:hover, html[data-motion='reduced'] .app-row:hov
                 linear-gradient(0deg, #030609bb, #03060900 55%);
   }
 }
+
+/* The introduction can be stopped without changing system preferences. */
+.terminal-bar{align-items:center}
+.motion-toggle{display:flex;align-items:center;justify-content:center;flex:none;width:28px;height:28px;padding:5px;border:1px solid #7c96b7;border-radius:4px;background:transparent;color:white}
+.motion-toggle img{filter:invert(1)}
+.motion-toggle:disabled{opacity:.55}

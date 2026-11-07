@@ -57,7 +57,7 @@
       cancel();
     }
     if (toggle) {
-      const label = reduced.matches ? 'Анимация отключена настройкой системы' : enabled ? 'Отключить анимацию' : 'Включить анимацию';
+      const label = reduced.matches ? 'Animation is off in system settings' : enabled ? 'Pause animation' : 'Enable animation';
       toggle.disabled = reduced.matches;
       toggle.setAttribute('aria-pressed', String(enabled));
       toggle.setAttribute('aria-label', label);

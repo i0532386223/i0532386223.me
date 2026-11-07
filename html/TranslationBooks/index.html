@@ -20,25 +20,19 @@
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="css/vendor/google-fonts.css" rel="stylesheet" type="text/css">
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="js/vendor/html5shiv.js"></script>
-        <script src="js/vendor/respond.min.js"></script>
-    <![endif]-->
 
+<link href="../legacy.css" rel="stylesheet">
 </head>
 
 <body id="page-top" class="index">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" aria-label="Primary">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -66,10 +60,10 @@
                         <a href="#privacy" key="privacy">Privacy Policy</a>
                     </li>
                     <li class="page-scroll lang-margin">
-                        <a href="#en" id="en" class="lang">EN</a>
+                        <a href="#en" id="en" class="lang" lang="en" hreflang="en">EN</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#ru" id="ru" class="lang">RU</a>
+                        <a href="#ru" id="ru" class="lang" lang="ru" hreflang="ru">RU</a>
                     </li>
                 </ul>
 
@@ -85,16 +79,16 @@
             <div class="row">
                 <div class="col-lg-12">
                     <!-- <img class="img-responsive" src="img/profile.png" alt=""> -->
-                    <img class="img-icon" src="img/icon-main.png" alt="">
+                    <img class="img-icon" fetchpriority="high" src="img/icon-main.png" alt="" width="512" height="512">
                     <div class="intro-text">
                         <span class="name" key="logo">Translation of Books</span>
                         <hr class="star-light">
-                        <span class="skills" key="short_discription"></span>
+                        <span class="skills" key="short_discription">Application for reading books in foreign languages</span>
                     </div>
                     
                     <div class="col-lg-8 col-lg-offset-2 text-center">
                         <a href="https://itunes.apple.com/us/app/reading-books-with-translation/id1417725809" class="appstore">
-                            <img class="img-responsive" src="img/appstore.png" alt="">
+                            <img class="img-responsive" src="img/appstore.png" alt="Download on the App Store" width="300" height="122">
                         </a>
                     </div>
                 </div>
@@ -113,13 +107,13 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
-                    <img src="img/screenshots/translation-books-library.png" class="img-responsive" alt="">
+                    <img src="img/screenshots/translation-books-library.webp" class="img-responsive" alt="" width="1320" height="2868" loading="lazy" decoding="async" srcset="img/screenshots/translation-books-library-720.webp?v=18d0847b37 720w, img/screenshots/translation-books-library.webp 1320w" sizes="(max-width: 767px) calc(100vw - 90px), (max-width: 1199px) 280px, 360px">
                 </div>
                 <div class="col-sm-4 portfolio-item">
-                    <img src="img/screenshots/translation-books-reader.png" class="img-responsive" alt="">
+                    <img src="img/screenshots/translation-books-reader.webp" class="img-responsive" alt="" width="1320" height="2868" loading="lazy" decoding="async" srcset="img/screenshots/translation-books-reader-720.webp?v=9763f580bf 720w, img/screenshots/translation-books-reader.webp 1320w" sizes="(max-width: 767px) calc(100vw - 90px), (max-width: 1199px) 280px, 360px">
                 </div>
                 <div class="col-sm-4 portfolio-item">
-                    <img src="img/screenshots/translation-books-settings.png" class="img-responsive" alt="">
+                    <img src="img/screenshots/translation-books-settings.webp" class="img-responsive" alt="" width="1320" height="2868" loading="lazy" decoding="async" srcset="img/screenshots/translation-books-settings-720.webp?v=f80214f334 720w, img/screenshots/translation-books-settings.webp 1320w" sizes="(max-width: 767px) calc(100vw - 90px), (max-width: 1199px) 280px, 360px">
                 </div>
             </div>
         </div>
@@ -162,35 +156,39 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <form name="sentMessage" id="contactForm" method="POST" action="https://formspree.io/f/xpqglwyl" novalidate>
-                        <input type="text" name="website" tabindex="-1" autocomplete="off" style="display: none;">
+                    <p class="contact-privacy" id="contact-privacy"><span key="contact_notice_open">Opening this form loads Cloudflare Turnstile, which processes browser and connection data to block spam.</span> <span key="contact_notice_send">When you choose Send, Formspree sends your email address and message to the developer to answer your request. Do not include sensitive information.</span> <a href="../privacy.html" key="website_privacy">Website privacy policy</a> · <a href="https://formspree.io/legal/privacy-policy/" key="formspree_privacy">Formspree privacy</a> · <a href="https://www.cloudflare.com/turnstile-privacy-policy/" key="turnstile_privacy">Turnstile privacy</a>.</p>
+                    <button class="btn btn-success btn-lg" id="open-contact" type="button" aria-controls="contactForm" aria-expanded="false" aria-describedby="contact-privacy" key="open_contact_form">Open contact form</button>
+                    <form name="sentMessage" id="contactForm" method="POST" action="https://formspree.io/f/xpqglwyl" data-contact-form lang="en" aria-describedby="contact-privacy" hidden>
+                        <input type="hidden" name="source" value="TranslationBooks">
+                        <input type="text" name="website" tabindex="-1" autocomplete="off" hidden>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Email Address</label>
-                                <input type="email" class="form-control" placeholder="Email Address" id="email" name="email" required data-validation-required-message="Please enter your email address.">
+                                <label for="email">Email Address</label>
+                                <input type="email" class="form-control" placeholder="Email Address" id="email" name="email" aria-describedby="contact-privacy" autocomplete="email" maxlength="254" required data-validation-required-message="Please enter your email address.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Message</label>
-                                <textarea rows="5" class="form-control" placeholder="Message" id="message" name="message" required data-validation-required-message="Please enter a message."></textarea>
+                                <label for="message">Message</label>
+                                <textarea rows="5" class="form-control" placeholder="Message" id="message" name="message" aria-describedby="contact-privacy" maxlength="8000" required data-validation-required-message="Please enter a message."></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12">
-                                <div class="cf-turnstile" data-sitekey="0x4AAAAAADsm5y_Mrsrrty1F"></div>
+                                <div data-spam-check data-sitekey="0x4AAAAAADsm5y_Mrsrrty1F"></div>
                             </div>
                         </div>
                         <br>
-                        <div id="success"></div>
+                        <div id="success" role="status" aria-live="polite"></div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg btn-block">Send</button>
+                                <button type="submit" disabled class="btn btn-success btn-lg btn-block">Send</button>
                             </div>
                         </div>
                     </form>
+<noscript><p>Enable JavaScript to use spam protection, or <a href="mailto:i0532386223@gmail.com">send an email</a>.</p></noscript>
                 </div>
             </div>
         </div>
@@ -220,6 +218,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         Copyright &copy; <span key="logo"></span> 2018
+                    <p><a class="website-privacy-link" href="../privacy.html" key="website_privacy">Website privacy policy</a></p>
                     </div>
                 </div>
             </div>
@@ -232,150 +231,8 @@
             <i class="fa fa-chevron-up"></i>
         </a>
     </div>
-
-
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="js/vendor/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script>
-    $(function() {
-
-        $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
-            preventSubmit: true,
-            submitError: function($form, event, errors) {
-            },
-            submitSuccess: function($form, event) {
-                $("#contactForm button[type=\"submit\"]").attr("disabled", true);
-                event.preventDefault();
-
-                if (!$form.find("input[name=\"cf-turnstile-response\"]").val()) {
-                    $("#contactForm button[type=\"submit\"]").attr("disabled", false);
-                    $('#success').html("<div class='alert alert-danger'>");
-                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Please complete the verification and try again.</strong>");
-                    $('#success > .alert-danger').append('</div>');
-                    return;
-                }
-
-                $.ajax({
-                    url: $form.attr("action"),
-                    type: "POST",
-                    data: $form.serialize() + "&source=TranslationBooks",
-                    dataType: "json",
-                    headers: {
-                        "Accept": "application/json"
-                    },
-                    cache: false,
-                    success: function() {
-                        $("#contactForm button[type=\"submit\"]").attr("disabled", false);
-                        $('#success').html("<div class='alert alert-success'>");
-                        $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                            .append("</button>");
-                        $('#success > .alert-success')
-                            .append("<strong>Your message has been sent. </strong>");
-                        $('#success > .alert-success')
-                            .append('</div>');
-
-                        $('#contactForm').trigger("reset");
-                        if (window.turnstile) {
-                            turnstile.reset();
-                        }
-                    },
-                    error: function() {
-                        $("#contactForm button[type=\"submit\"]").attr("disabled", false);
-                        $('#success').html("<div class='alert alert-danger'>");
-                        $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                            .append("</button>");
-                        $('#success > .alert-danger').append("<strong>Sorry, it seems that my mail server is not responding. Please try again later!");
-                        $('#success > .alert-danger').append('</div>');
-                        $('#contactForm').trigger("reset");
-                        if (window.turnstile) {
-                            turnstile.reset();
-                        }
-                    },
-                })
-            },
-            filter: function() {
-                return $(this).is(":visible");
-            },
-        });
-
-        $("a[data-toggle=\"tab\"]").click(function(e) {
-            e.preventDefault();
-            $(this).tab("show");
-        });
-    });
-
-    $('#contactForm input,#contactForm textarea').focus(function() {
-        $('#success').html('');
-    });
-    </script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/freelancer.js"></script>
-
-
-    <script>
-
-    var aLangKeys=new Array();
-    aLangKeys['en']=new Array();
-    aLangKeys['ru']=new Array();
-    aLangKeys['en']['logo']='Translation of Books';
-    aLangKeys['ru']['logo']='Translation of Books';
-
-    aLangKeys['en']['short_discription']='Application for reading books in foreign languages';
-    aLangKeys['ru']['short_discription']='Приложение для чтения книг на иностранных языках';
-
-    aLangKeys['en']['photos']='Screenshots';
-    aLangKeys['ru']['photos']='Скриншоты';
-
-    aLangKeys['en']['about']='About';
-    aLangKeys['ru']['about']='О приложении';
-
-    aLangKeys['en']['about-text1']='You can easily read books in foreign languages. When you click on a word or a sentence, you hear their pronunciation and see the translation. Books and texts for reading you choose yourself.';
-    aLangKeys['ru']['about-text1']='Вы легко сможете читать книги на иностранных языках. При нажатии на слово или предложение вы слышите их произношение и видите перевод. Книги и тексты для чтения вы выбираете самостоятельно.';
-    
-    aLangKeys['en']['about-text2']='The app allows you to choose the encoding and font size, and stores a list of books and a reading position.';
-    aLangKeys['ru']['about-text2']='Приложение дает возможность выбрать кодировку и размер шрифта, и запоминает список книг и позицию чтения.';
-    aLangKeys['ru']['about-text3']='Приложение поддерживает html страницы и книги в формате epub.';
-
-    aLangKeys['en']['contact']='Contact';
-    aLangKeys['ru']['contact']='Контакты';
-
-    aLangKeys['en']['privacy']='Privacy Policy';
-    aLangKeys['ru']['privacy']='Политика конфиденциальности';
-
-    aLangKeys['en']['contact_me']='Contact me';
-    aLangKeys['ru']['contact_me']='Связаться с нами';
-
-    $(document).ready(function() {
-        // onclick behavior
-        $('.lang').click( function(e) {
-            e.preventDefault();
-            var lang = $(this).attr('id'); // obtain language id
-            // translate all translatable elements
-            $('[key]').each(function(i){
-                console.log("sdfsd "+ $(this).attr('key'));
-              $(this).text(aLangKeys[lang][ $(this).attr('key') ]);
-            });
-        } );
-
-        $('#en').trigger( "click" );
-    });
-    </script>
-
+<script id="legacy-translations" type="application/json">{"en": {"logo": "Translation of Books", "short_discription": "Application for reading books in foreign languages", "photos": "Screenshots", "about": "About", "about-text1": "You can easily read books in foreign languages. When you click on a word or a sentence, you hear their pronunciation and see the translation. Books and texts for reading you choose yourself.", "about-text2": "The app allows you to choose the encoding and font size, and stores a list of books and a reading position.", "contact": "Contact", "privacy": "Privacy Policy", "contact_me": "Contact me", "about-text3": "The app supports HTML pages and EPUB files.", "open_contact_form": "Open contact form", "contact_notice_open": "Opening this form loads Cloudflare Turnstile, which processes browser and connection data to block spam.", "contact_notice_send": "When you choose Send, Formspree sends your email address and message to the developer to answer your request. Do not include sensitive information.", "website_privacy": "Website privacy policy", "formspree_privacy": "Formspree privacy", "turnstile_privacy": "Turnstile privacy"}, "ru": {"logo": "Translation of Books", "short_discription": "Приложение для чтения книг на иностранных языках", "photos": "Скриншоты", "about": "О приложении", "about-text1": "Вы легко сможете читать книги на иностранных языках. При нажатии на слово или предложение вы слышите их произношение и видите перевод. Книги и тексты для чтения вы выбираете самостоятельно.", "about-text2": "Приложение дает возможность выбрать кодировку и размер шрифта, и запоминает список книг и позицию чтения.", "about-text3": "Приложение поддерживает html страницы и книги в формате epub.", "contact": "Контакты", "privacy": "Политика конфиденциальности", "contact_me": "Связаться с нами", "open_contact_form": "Открыть форму", "contact_notice_open": "При открытии формы загружается Cloudflare Turnstile: сервис обрабатывает данные браузера и соединения для защиты от спама.", "contact_notice_send": "После нажатия Send сервис Formspree передаст ваш email и сообщение разработчику для ответа на обращение. Не указывайте конфиденциальные сведения.", "website_privacy": "Политика конфиденциальности сайта", "formspree_privacy": "Конфиденциальность Formspree", "turnstile_privacy": "Конфиденциальность Turnstile"}}</script>
+<script defer src="../legacy.js"></script>
+<script defer src="../contact.js"></script>
 </body>
-
 </html>
