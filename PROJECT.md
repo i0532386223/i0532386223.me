@@ -56,3 +56,15 @@ Privacy changes checked on 7 November 2026:
 - The policy and English/Russian contact notices were inspected in desktop and mobile screenshots. No real contact message was sent. Provider account settings and production deployment were not part of these local checks.
 
 See [the audit report](AUDIT-2026-11-07.md) for the measured results and verification limits.
+
+## Production verification — 7 November 2026
+
+The changes were pushed to `main`, and the Cloudflare Pages deployment completed successfully. The production check covers all 55 HTML files and five shared script/style assets, including their clean URLs and response headers.
+
+All four contact forms were inspected in Chrome on the public domain. Each started closed with its privacy notice visible and no external script in the page. Opening each form started the real Turnstile service. The Russian notice and opening control were also checked on Visual App Launcher.
+
+Two marked test messages were sent through the real forms: one from Medicine Notes and one from Simple Servers Monitor. Both pages showed the sent confirmation. Both messages were found in the developer's Gmail inbox with the expected application source and test reference. The other two forms were checked through opening and verification; no message was sent from them. A manual challenge on Translation Books was not completed.
+
+The first CDN comparison found injected analytics/email scripts and the missing clean `/404` header rule. HTML `no-transform` rules and the `/404` alias now cover those cases. The static checker also checks the clean 404 alias. No cache rule for images, fonts, or CSS was changed by these production fixes.
+
+These checks confirm the observed browser behavior and two actual deliveries. They do not verify provider account settings or prove that the submission service rejects every invalid verification token.

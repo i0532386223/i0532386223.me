@@ -102,7 +102,7 @@ for path in pages:
     urls = {'/' + relative}
     if path.name == 'index.html':
         urls.add('/' + relative.removesuffix('index.html'))
-    elif path.name != '404.html':
+    else:
         urls.add('/' + relative.removesuffix('.html'))
     for url in urls:
         headers = [item for pattern, values in rules if fnmatchcase(url, pattern) for item in values]
