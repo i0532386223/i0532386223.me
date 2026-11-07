@@ -1,0 +1,87 @@
+/* Short transitions keep the focus on content. Ambient effects have separate controls. */
+.signal-line, .signal-word { display: block; }
+.signal-line { overflow: clip; }
+.preview-controls { max-width: calc(100vw - 24px); }
+.preview-controls > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.preview-controls > a, .preview-controls > button { flex-shrink: 0; }
+.preview-controls [data-motion-toggle]:disabled { opacity: .45; cursor: default; }
+.terminal { transition: border-color 240ms ease, box-shadow 240ms ease; }
+.terminal:focus-within { border-color: #8db2df; box-shadow: 0 18px 55px #0004, 0 0 0 1px #608bc22b; }
+.focus-tabs button, .showcase-tabs button { transition: color 180ms ease, border-color 220ms ease, background-color 220ms ease; }
+.studio-stage { transition: background-color 350ms ease, box-shadow 400ms ease; }
+.signal-project h3 { transition: transform 350ms cubic-bezier(.22, 1, .36, 1); }
+.field-project-image img, .studio-product-image img { transition: transform 450ms cubic-bezier(.22, 1, .36, 1); }
+
+@media (hover: hover) and (pointer: fine) {
+  .signal-project-title:hover h3 { transform: translateX(5px); }
+  .field-project-image:hover img { transform: translateY(-3px); }
+  .studio-product-image:hover img { transform: translateY(-4px); }
+  .studio-stage:hover { box-shadow: 0 10px 32px #301e4d0d; }
+}
+
+/* An explicit pause has the same behavior as the system's reduced-motion setting. */
+html[data-motion='off'], html[data-motion='reduced'] { scroll-behavior: auto; }
+html[data-motion='off'] *, html[data-motion='off'] *::before, html[data-motion='off'] *::after,
+html[data-motion='reduced'] *, html[data-motion='reduced'] *::before, html[data-motion='reduced'] *::after {
+  animation: none !important;
+  transition: none !important;
+}
+html[data-motion='off'] .button:hover, html[data-motion='reduced'] .button:hover,
+html[data-motion='off'] a:hover .ui-icon, html[data-motion='reduced'] a:hover .ui-icon,
+html[data-motion='off'] .signal-project-title:hover h3, html[data-motion='reduced'] .signal-project-title:hover h3,
+html[data-motion='off'] .field-project-image:hover img, html[data-motion='reduced'] .field-project-image:hover img,
+html[data-motion='off'] .studio-product-image:hover img, html[data-motion='reduced'] .studio-product-image:hover img {
+  transform: none;
+}
+html[data-motion='off'] .app-row:hover, html[data-motion='reduced'] .app-row:hover { padding-left: 0; padding-right: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .signal-project-title:hover h3, .field-project-image:hover img, .studio-product-image:hover img, a:hover .ui-icon { transform: none; }
+  .app-row:hover { padding-left: 0; padding-right: 0; }
+}
+
+/* The moving globe is decorative. The original image is a complete fallback. */
+.horizon-intro { position: relative; isolation: isolate; overflow: clip; }
+.earth-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 900ms ease;
+}
+.earth-ready .earth-canvas { opacity: 1; }
+.earth-ready::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(90deg, #030609a6 0%, #03060955 36%, #03060900 68%),
+              linear-gradient(0deg, #03060999, #03060900 30%);
+}
+.terminal-intro .sr-only { margin: 0; }
+.terminal-result > [data-type-row] { display: block; }
+.terminal-script [data-type-state="pending"] { visibility: hidden; }
+.typing-rest { visibility: hidden; }
+.typing-ink { position: relative; }
+[data-type-state="active"] .typing-ink::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 1.05em;
+  bottom: .02em;
+  margin-left: 2px;
+  background: #8bc4de;
+  opacity: .75;
+  animation: terminal-caret 1.4s ease-in-out infinite;
+}
+.terminal-intro[data-typing-state="paused"] .typing-ink::after { animation-play-state: paused; }
+@keyframes terminal-caret { 50% { opacity: .25; } }
+@media (max-width: 760px) {
+  .earth-ready::before {
+    background: linear-gradient(90deg, #03060999, #03060922),
+                linear-gradient(0deg, #030609bb, #03060900 55%);
+  }
+}

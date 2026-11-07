@@ -1,0 +1,34 @@
+/* The selected signature fills the reserved hero area without moving the console. */
+.lab-identity{min-height:calc(clamp(62px,7.7vw,118px) * 3.09 + 47px);padding-top:20px;min-width:0}
+.lab-intro .lab-name{display:flex;flex-direction:column;align-items:flex-start;gap:4px;font-size:inherit;line-height:1;letter-spacing:normal;font-weight:400}
+.lab-first-name{font-size:clamp(58px,4.6vw,80px);font-weight:400;line-height:1.1;letter-spacing:-.01em}
+.lab-surname{font-size:clamp(58px,5.4vw,94px);font-weight:800;line-height:1.08;letter-spacing:-.025em;text-transform:uppercase}
+.lab-identity-rule{width:70px;margin:30px 0 16px;border:0;border-top:4px solid #81e7bc}
+.lab-role{font-size:clamp(28px,2.7vw,46px);font-weight:600;line-height:1.25;letter-spacing:-.015em;color:#81e7bc}
+.lab-work{padding-top:64px;padding-bottom:72px}
+.lab-work .section-label{margin-bottom:20px}
+.lab-work h2{font-size:clamp(36px,4vw,58px)}
+.lab-project-grid{grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:34px 24px;margin-top:32px}
+.lab-project{position:relative;min-width:0;padding:18px 0 0;gap:0}
+.lab-project-heading{display:flex;align-items:center;gap:12px;width:100%;margin-bottom:14px}
+.lab-project-heading>img{width:44px;height:44px;flex:none;border-radius:10px}
+.lab-project-heading>div{min-width:0}
+.lab-project-heading .mono{display:block;font:9px/1.5 var(--mono);letter-spacing:.04em;color:#9bb8e0}
+.lab-project-heading h3{font-size:22px;line-height:1.25;letter-spacing:-.03em;margin-top:4px;overflow-wrap:anywhere}
+/* Natural image height keeps the entire app window inside its frame. */
+.lab-project-visual{width:100%;height:auto;flex:none;border:1px solid #ffffff20;border-radius:4px;background:#112337;overflow:hidden;margin:0}
+.lab-project-visual>img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;padding:0;transform:none}
+.lab-project-visual.is-phone{display:flex;justify-content:center;align-items:center;padding:16px;background:linear-gradient(135deg,#11273a,#162e3c)}
+.lab-project-visual.is-phone>img{width:auto;height:360px;max-width:100%;object-fit:contain;border-radius:9px}
+.lab-project>p{min-height:0;flex:none;margin:12px 0;font-size:13px;line-height:1.6;color:#aebed4}
+.lab-project-meta{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px 16px;width:100%}
+.lab-project-meta .availability-label{font:9px/1.6 var(--mono);color:#81e7bc}
+.lab-project-meta .text-link{font-size:11px;margin:0;gap:12px}
+.lab-background{padding-top:0}
+.lab-background .career-layout{display:grid;grid-template-columns:1fr 1fr;gap:8vw;border-top:1px solid #ffffff26;padding-top:55px}
+.career-intro h2{font-size:clamp(35px,4vw,59px);line-height:1.1;letter-spacing:-.04em;margin:20px 0}
+.career-intro p:not(.eyebrow){font-size:14px;line-height:1.9;color:#9baac2;max-width:480px;margin-bottom:28px}
+.career-list{list-style:none;margin:0;padding:0}.career-list li{padding:22px 0;border-bottom:1px solid #ffffff26}.career-list li:first-child{padding-top:0}.career-list span{font:9px var(--mono);color:#81e7bc}.career-list h3{font-size:21px;margin:13px 0 9px}.career-list p{font-size:12px;color:#9baac2;line-height:1.9}
+.studio-product-image img{max-width:100%;max-height:100%;object-fit:contain}.studio-product-image.is-phone img{width:auto;height:100%;max-height:290px}.studio-product-image:not(.is-phone) img{width:100%;height:auto}.studio-stage{overflow:hidden}
+@media(max-width:1100px){.lab-identity{min-height:calc(8vw * 3.09 + 45.3px)}.lab-first-name{font-size:clamp(42px,5vw,62px)}.lab-surname{font-size:clamp(38px,5.3vw,58px)}.lab-role{font-size:clamp(25px,2.6vw,32px)}.lab-project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.lab-identity{min-height:0;padding-top:0}.lab-first-name{font-size:clamp(40px,10.5vw,72px)}.lab-surname{font-size:clamp(32px,12vw,80px)}.lab-identity-rule{width:50px;margin:24px 0 16px;border-top-width:3px}.lab-role{font-size:clamp(24px,5.4vw,34px);line-height:1.3}.lab-work{padding-top:44px;padding-bottom:52px}.lab-work .section-label{margin-bottom:18px}.lab-project-grid{grid-template-columns:1fr;gap:30px;margin-top:26px}.lab-project{gap:0;padding-top:16px}.lab-project-heading{margin-bottom:12px}.lab-project-heading h3{font-size:23px}.lab-project>p{font-size:13px;line-height:1.6;margin:12px 0}.lab-project-visual.is-phone>img{height:400px}.lab-project-meta .text-link{font-size:11px}.lab-background .career-layout{grid-template-columns:1fr;gap:40px;padding-top:35px}.career-intro p:not(.eyebrow){font-size:13px}.career-list h3{font-size:24px}.career-list p{font-size:13px}}

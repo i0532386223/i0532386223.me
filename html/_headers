@@ -1,0 +1,29 @@
+/MedicineNotes/*
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+  Content-Security-Policy: script-src 'self' https://challenges.cloudflare.com; connect-src 'self' https://formspree.io https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; form-action https://formspree.io; object-src 'none'; base-uri 'self'
+  Referrer-Policy: no-referrer
+  X-Content-Type-Options: nosniff
+
+/
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+  Content-Security-Policy: script-src 'self'; connect-src 'self'; form-action 'none'; object-src 'none'; base-uri 'self'
+  Referrer-Policy: no-referrer
+  X-Content-Type-Options: nosniff
+
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+  Content-Security-Policy: script-src 'self'; connect-src 'self'; form-action 'none'; object-src 'none'; base-uri 'self'
+  Referrer-Policy: no-referrer
+  X-Content-Type-Options: nosniff
+
+/apps.html
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+  Content-Security-Policy: script-src 'self'; connect-src 'self'; form-action 'none'; object-src 'none'; base-uri 'self'
+  Referrer-Policy: no-referrer
+  X-Content-Type-Options: nosniff
+
+/projects/*
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+  Content-Security-Policy: script-src 'self'; connect-src 'self'; form-action 'none'; object-src 'none'; base-uri 'self'
+  Referrer-Policy: no-referrer
+  X-Content-Type-Options: nosniff
