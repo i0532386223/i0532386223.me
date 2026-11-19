@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "include": [
+    "/outlook-lab",
+    "/outlook-lab/*"
+  ],
+  "exclude": []
+}
