@@ -37,6 +37,10 @@ export default {
 
     const { type, content } = site.assets[name];
     const fileHeaders = { ...headers, "Content-Type": type };
+    if (name === "events.html" || name === "transport.html") {
+      // Keep HTTPS available to Office.js. Name both loopback endpoints so the browser test can compare them.
+      fileHeaders["Content-Security-Policy"] = "connect-src 'self' https: ws://localhost:3001 wss://localhost:3000";
+    }
     if (name === "manifest.xml") {
       fileHeaders["Content-Disposition"] = 'attachment; filename="manifest-hosted.xml"';
     }
