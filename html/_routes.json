@@ -2,7 +2,9 @@
   "version": 1,
   "include": [
     "/outlook-lab",
-    "/outlook-lab/*"
+    "/outlook-lab/*",
+    "/browser-lab",
+    "/browser-lab/*"
   ],
   "exclude": []
 }
