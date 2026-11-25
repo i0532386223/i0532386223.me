@@ -1,0 +1,7 @@
+/RedNotes /NotesAndPapers/ 301
+/RedNotes/ /NotesAndPapers/ 301
+/RedNotes/index.html /NotesAndPapers/ 301
+/RedNotes/privacy.html /NotesAndPapers/privacy 301
+/RedNotes/feedback.html /NotesAndPapers/feedback 301
+/RedNotes/red-notes.css /NotesAndPapers/notes-and-papers.css 301
+/RedNotes/* /NotesAndPapers/:splat 301
