@@ -28,7 +28,7 @@ The policy uses retention criteria rather than an unverified fixed deletion peri
 
 ## Assets and hosting
 
-The unlisted pages at `/demos/abc-localhost/browser/` and `/demos/abc-localhost/outlook/` send user-entered test text to a Caddy receiver at `https://abc.localhost:8443/message`. The Outlook directory also serves the Local Reply add-in manifest. Its task pane can be framed by the listed Outlook hosts. Each `public/` directory in the demo kit is a copy of the corresponding files on this site.
+The unlisted pages at `/demos/abc-localhost/browser/` and `/demos/abc-localhost/outlook/` send user-entered test text to a Caddy receiver at `https://abc.localhost:8443/message`. The Outlook directory also serves the Local Reply add-in manifest. Its task pane can be framed by the listed Outlook hosts. The demo kit contains copies of the hosted files in `01-Browser/Hosted Web Page` and `02-Outlook/Hosted Outlook Add-in`.
 
 Cloudflare Pages serves `html/`. The `_headers` file defines CSP, frame protection, HSTS, referrer policy, and browser permission limits. Contact sections allow only the existing external services. Keep their CSP separate from the portfolio CSP: matching Cloudflare header rules are combined.
 
