@@ -1,0 +1,6 @@
+.product-art .screen-link img{display:block}
+.screenshot-gallery .screen-link{height:clamp(300px,38vw,570px);aspect-ratio:auto;background:#142033}
+.contact-form{display:grid;gap:1rem;max-width:42rem;margin:1rem 0 3rem}
+.contact-form[hidden]{display:none}.contact-form label{display:grid;gap:.5rem;color:#d3deeb}
+.contact-form input,.contact-form textarea{width:100%;font:inherit;color:#e4eaf2;background:#0b1525;border:1px solid #617186;border-radius:4px;padding:.8rem}
+.contact-form textarea{min-height:10rem;resize:vertical}.contact-form .button{justify-self:start}.contact-form button:disabled{opacity:.55}

@@ -16,7 +16,7 @@ const browser = await chromium.launch({
 });
 let checks = 0;
 const pass = message => { checks++; console.log(`PASS: ${message}`); };
-const surfaces = ['/', '/apps.html', '/privacy.html', '/projects/workbundle/', '/MedicineNotes/', '/TranslationBooks/', '/SimpleServersMonitor/', '/VisualAppLauncher/'];
+const surfaces = ['/RedNotes/', '/RedNotes/privacy.html', '/RedNotes/feedback.html', '/', '/apps.html', '/privacy.html', '/projects/workbundle/', '/MedicineNotes/', '/TranslationBooks/', '/SimpleServersMonitor/', '/VisualAppLauncher/'];
 const forms = ['/MedicineNotes/', '/TranslationBooks/', '/SimpleServersMonitor/', '/VisualAppLauncher/'];
 const captchaStub = `
 window.turnstile = {
@@ -78,7 +78,7 @@ try {
       if(width===1440) await page.screenshot({path:path.join(output,(url.split('/').filter(Boolean).join('-')||'home')+'-desktop.png')});
     }
   }
-  pass('eight main surfaces fit 320, 768, and 1440 pixel viewports');
+  pass('main surfaces fit 320, 768, and 1440 pixel viewports');
   if(axePath) {
     await page.setViewportSize({width:390,height:844});
     for(const url of surfaces) {
@@ -88,7 +88,7 @@ try {
       assert.deepEqual(violations,[],url);
       await page.screenshot({path:path.join(output,(url.split('/').filter(Boolean).join('-')||'home')+'-mobile.png')});
     }
-    pass('axe finds no WCAG A/AA violations on the eight main surfaces');
+    pass('axe finds no WCAG A/AA violations on the main surfaces');
   }
   await page.goto(base+'/does-not-exist-audit',{waitUntil:'networkidle'}).then(response=>assert.equal(response.status(),404));
   assert.match(await page.title(),/Page not found/);
@@ -103,7 +103,7 @@ try {
   assert.equal(await page.evaluate(()=>window.auditInjection),undefined);
   assert.equal(await page.locator('#terminal-output img').count(),0);
   await input.fill('work'); await input.press('Enter');
-  assert.equal(await page.locator('#terminal-output a').count(),10);
+  assert.equal(await page.locator('#terminal-output a').count(),await page.locator('.lab-project').count());
   await page.locator('#focus-tab-security').focus();
   await page.keyboard.press('ArrowRight');
   assert.equal(await page.locator('#focus-tab-platform').getAttribute('aria-selected'),'true');
@@ -146,7 +146,7 @@ try {
   await animated.close();
 
   console.log('Intent: simulate contact responses. No message can leave the browser test.');
-  for(const url of forms) {
+  for(const url of [...forms, '/RedNotes/feedback.html']) {
     const ctx=await context(320);
     let mode='error',posts=0,captchaLoads=0;
     await ctx.route('**/*',async route=>{
