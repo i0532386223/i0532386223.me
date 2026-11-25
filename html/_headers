@@ -6,6 +6,22 @@
   Strict-Transport-Security: max-age=31536000
   Permissions-Policy: camera=(), microphone=(), geolocation=()
 
+# The two demos send JSON only to the HTTPS receiver on the visitor's computer.
+/demos/abc-localhost/browser/*
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+  X-Robots-Tag: noindex, nofollow
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://abc.localhost:8443; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+
+# Outlook opens this page in a frame. Only these Outlook web hosts can embed it.
+/demos/abc-localhost/outlook/*
+  ! X-Frame-Options
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+  X-Robots-Tag: noindex, nofollow
+  Content-Security-Policy: default-src 'none'; script-src 'self' https://appsforoffice.microsoft.com; style-src 'self'; img-src 'self' data:; connect-src 'self' https://appsforoffice.microsoft.com https://abc.localhost:8443; base-uri 'none'; form-action 'none'; frame-ancestors https://outlook.live.com https://outlook.office.com https://outlook.office365.com https://outlook.cloud.microsoft
+
+/demos/abc-localhost/outlook/manifest.xml
+  Content-Disposition: attachment; filename="manifest.xml"
+
 /
   Cache-Control: public, max-age=0, must-revalidate, no-transform
   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-src 'none'; form-action 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'

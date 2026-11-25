@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Check static references, document IDs, JSON data, and CSP coverage."""
 from collections import Counter
-from fnmatch import fnmatchcase
 from html.parser import HTMLParser
 from pathlib import Path
 import json
 import re
 import sys
 from urllib.parse import unquote, urlsplit
+from site_headers import headers_for_path, read_rules
 
 ROOT = Path(__file__).resolve().parents[1] / 'html'
 errors = []
@@ -87,15 +87,7 @@ for path in ROOT.rglob('*.css'):
         references += 1
         check_reference(path, match[2])
 
-rules = []
-for line in (ROOT / '_headers').read_text().splitlines():
-    if not line.strip() or line.startswith('#'):
-        continue
-    if not line[0].isspace():
-        rules.append((line, []))
-    else:
-        key, value = line.strip().split(':', 1)
-        rules[-1][1].append((key.lower(), value.strip()))
+rules = read_rules(ROOT / '_headers')
 
 for path in pages:
     relative = path.relative_to(ROOT).as_posix()
@@ -105,13 +97,21 @@ for path in pages:
     else:
         urls.add('/' + relative.removesuffix('.html'))
     for url in urls:
-        headers = [item for pattern, values in rules if fnmatchcase(url, pattern) for item in values]
+        headers = headers_for_path(rules, url)
         policies = [value for key, value in headers if key == 'content-security-policy']
         if len(policies) != 1:
             errors.append(f'{url}: expected one CSP, got {len(policies)}')
-        for key, expected in [('x-frame-options', 'DENY'), ('x-content-type-options', 'nosniff')]:
-            if (key, expected) not in headers:
-                errors.append(f'{url}: missing {key}')
+        if ('x-content-type-options', 'nosniff') not in headers:
+            errors.append(f'{url}: missing x-content-type-options')
+        if relative == 'demos/abc-localhost/outlook/index.html':
+            expected_ancestors = {'https://outlook.live.com', 'https://outlook.office.com',
+                                  'https://outlook.office365.com', 'https://outlook.cloud.microsoft'}
+            ancestors = [directive.strip().split()[1:] for policy in policies for directive in policy.split(';')
+                         if directive.strip().startswith('frame-ancestors ')]
+            if any(key == 'x-frame-options' for key, _ in headers) or len(ancestors) != 1 or set(ancestors[0]) != expected_ancestors:
+                errors.append(f'{url}: expected the Outlook frame policy')
+        elif ('x-frame-options', 'DENY') not in headers:
+            errors.append(f'{url}: missing x-frame-options')
 
 if errors:
     print('\n'.join(errors), file=sys.stderr)

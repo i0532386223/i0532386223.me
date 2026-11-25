@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xsi:type="MailApp">
+  <Id>1a60f755-63c1-4ce0-9afe-393bc90970b4</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>me.i0532386223</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Local Reply"/>
+  <Description DefaultValue="Send a test message to abc.localhost and read its reply."/>
+  <IconUrl DefaultValue="https://i0532386223.me/demos/abc-localhost/outlook/icon-64.png"/>
+  <HighResolutionIconUrl DefaultValue="https://i0532386223.me/demos/abc-localhost/outlook/icon-128.png"/>
+  <SupportUrl DefaultValue="https://i0532386223.me/demos/abc-localhost/outlook/"/>
+  <Hosts><Host Name="Mailbox"/></Hosts>
+  <Requirements><Sets><Set Name="Mailbox" MinVersion="1.1"/></Sets></Requirements>
+  <FormSettings>
+    <Form xsi:type="ItemRead"><DesktopSettings>
+      <SourceLocation DefaultValue="https://i0532386223.me/demos/abc-localhost/outlook/"/>
+      <RequestedHeight>350</RequestedHeight>
+    </DesktopSettings></Form>
+  </FormSettings>
+  <Permissions>Restricted</Permissions>
+  <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Requirements><bt:Sets DefaultMinVersion="1.3"><bt:Set Name="Mailbox"/></bt:Sets></Requirements>
+    <Hosts><Host xsi:type="MailHost"><DesktopFormFactor>
+      <FunctionFile resid="Pane.Url"/>
+      <ExtensionPoint xsi:type="MessageReadCommandSurface">
+        <OfficeTab id="TabDefault">
+          <Group id="LocalReply.Group">
+            <Label resid="Name"/>
+            <Control xsi:type="Button" id="LocalReply.Open">
+              <Label resid="Name"/>
+              <Supertip><Title resid="Name"/><Description resid="Description"/></Supertip>
+              <Icon>
+                <bt:Image size="16" resid="Icon.16"/>
+                <bt:Image size="32" resid="Icon.32"/>
+                <bt:Image size="80" resid="Icon.80"/>
+              </Icon>
+              <Action xsi:type="ShowTaskpane"><SourceLocation resid="Pane.Url"/></Action>
+            </Control>
+          </Group>
+        </OfficeTab>
+      </ExtensionPoint>
+    </DesktopFormFactor></Host></Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16" DefaultValue="https://i0532386223.me/demos/abc-localhost/outlook/icon-16.png"/>
+        <bt:Image id="Icon.32" DefaultValue="https://i0532386223.me/demos/abc-localhost/outlook/icon-32.png"/>
+        <bt:Image id="Icon.80" DefaultValue="https://i0532386223.me/demos/abc-localhost/outlook/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls><bt:Url id="Pane.Url" DefaultValue="https://i0532386223.me/demos/abc-localhost/outlook/"/></bt:Urls>
+      <bt:ShortStrings><bt:String id="Name" DefaultValue="Local Reply"/></bt:ShortStrings>
+      <bt:LongStrings><bt:String id="Description" DefaultValue="Send test text to this computer and show its reply."/></bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>

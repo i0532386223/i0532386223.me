@@ -28,6 +28,8 @@ The policy uses retention criteria rather than an unverified fixed deletion peri
 
 ## Assets and hosting
 
+The unlisted pages at `/demos/abc-localhost/browser/` and `/demos/abc-localhost/outlook/` send user-entered test text to a Caddy receiver at `https://abc.localhost:8443/message`. The Outlook directory also serves the Local Reply add-in manifest. Its task pane can be framed by the listed Outlook hosts. Each `public/` directory in the demo kit is a copy of the corresponding files on this site.
+
 Cloudflare Pages serves `html/`. The `_headers` file defines CSP, frame protection, HSTS, referrer policy, and browser permission limits. Contact sections allow only the existing external services. Keep their CSP separate from the portfolio CSP: matching Cloudflare header rules are combined.
 
 Keep the default Cloudflare cache policy for assets in the retained application sections. A section-wide `Cache-Control: max-age=0` would also apply to its fonts, images, and stylesheets. HTML responses use `no-transform`: the first production check found that Cloudflare otherwise injected Web Analytics and rewrote public email links. The strict CSP blocked those scripts but left the email address unreadable on the policy page. The HTML route rules prevent those CDN body changes while preserving the asset cache rules and the CSP.

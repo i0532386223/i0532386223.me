@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Serve the local site and its _headers for browser checks. Not a production server."""
 import argparse
-import fnmatch
 import functools
 import http.server
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
+from site_headers import headers_for_path, read_rules
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[1] / 'html')
@@ -38,15 +38,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
     def end_headers(self):
         path = urlsplit(self.path).path
-        rule = None
-        for line in (args.root / '_headers').read_text().splitlines():
-            if not line.strip() or line.startswith('#'):
-                continue
-            if not line[0].isspace():
-                rule = line
-            elif rule and fnmatch.fnmatchcase(path, rule):
-                key, value = line.strip().split(':', 1)
-                self.send_header(key, value.strip())
+        for key, value in headers_for_path(read_rules(args.root / '_headers'), path):
+            self.send_header(key, value)
         super().end_headers()
 
     def log_message(self, *values):

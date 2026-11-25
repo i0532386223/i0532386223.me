@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Browser to abc.localhost</title>
+  <link rel="stylesheet" href="./demo.css">
+  <script src="./send.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Browser to localhost</h1>
+    <p>Send a test message to <code>https://abc.localhost:8443</code> on this computer.</p>
+    <form data-sender="Browser">
+      <label for="message">Test message</label>
+      <input id="message" value="Hello from the browser!" maxlength="240" required>
+      <button disabled>Send to Mac</button>
+    </form>
+    <p id="status" role="status"></p>
+    <pre id="result"></pre>
+  </main>
+</body>
+</html>
