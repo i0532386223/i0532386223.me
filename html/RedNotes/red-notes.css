@@ -4,3 +4,5 @@
 .contact-form[hidden]{display:none}.contact-form label{display:grid;gap:.5rem;color:#d3deeb}
 .contact-form input,.contact-form textarea{width:100%;font:inherit;color:#e4eaf2;background:#0b1525;border:1px solid #617186;border-radius:4px;padding:.8rem}
 .contact-form textarea{min-height:10rem;resize:vertical}.contact-form .button{justify-self:start}.contact-form button:disabled{opacity:.55}
+
+.store-status{margin-top:1.5rem;font-size:1rem;line-height:1.5;color:#cbd7e7}
